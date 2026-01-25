@@ -1,0 +1,300 @@
+.review-container {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 20px 14px;
+}
+
+/* Header */
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.review-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Header buttons */
+.review-actions {
+  display: flex;
+  gap: 8px;
+}
+/* Modern Retry Button */
+.retry-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.retry-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.retry-btn:hover::before {
+  left: 100%;
+}
+
+.retry-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+  transform: translateY(-2px);
+}
+
+.retry-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Optional: Add icon support */
+.retry-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Modern Close Button */
+.close-btn {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.close-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.close-btn:hover::before {
+  left: 100%;
+}
+
+.close-btn:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+  transform: translateY(-2px);
+}
+
+.close-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+/* Optional: Add icon support */
+.close-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Disabled State */
+.retry-btn:disabled,
+.close-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.retry-btn:disabled:hover,
+.close-btn:disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Alternative Outline Style (Optional) */
+.retry-btn-outline {
+  background: transparent;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 19px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.retry-btn-outline:hover {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+  transform: translateY(-2px);
+}
+
+.close-btn-outline {
+  background: transparent;
+  color: #ef4444;
+  border: 2px solid #ef4444;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 19px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.close-btn-outline:hover {
+  background: #ef4444;
+  color: white;
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Soft/Subtle Style (Optional) */
+.retry-btn-soft {
+  background: #dbeafe;
+  color: #1e40af;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.retry-btn-soft:hover {
+  background: #bfdbfe;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15);
+  transform: translateY(-2px);
+}
+
+.close-btn-soft {
+  background: #fee2e2;
+  color: #991b1b;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.close-btn-soft:hover {
+  background: #fecaca;
+  box-shadow: 0 4px 12px rgba(153, 27, 27, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .retry-btn,
+  .close-btn,
+  .retry-btn-outline,
+  .close-btn-outline,
+  .retry-btn-soft,
+  .close-btn-soft {
+    font-size: 13px;
+    padding: 9px 16px;
+  }
+}
+
+/* Review Card */
+.review-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Question */
+.review-question {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 6px;
+}
+
+.q-no {
+  color: #2563eb;
+}
+
+/* Answers */
+.review-answers {
+  font-size: 14px;
+}
+
+.answer {
+  margin-bottom: 6px;
+}
+
+/* Status colors */
+.correct {
+  color: #16a34a;
+}
+
+.wrong {
+  color: #dc2626;
+}
+
+.not-answered {
+  color: #6b7280;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .review-title {
+    font-size: 20px;
+  }
+}

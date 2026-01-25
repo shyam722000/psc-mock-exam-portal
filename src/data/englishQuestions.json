@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "question": "Who is the first Chief Minister of Kerala?",
+    "options": ["E.M.S Namboodiripad", "K Karunakaran", "A K Antony", "Pinarayi Vijayan"],
+    "answer": 0
+  },
+  {
+    "id": 2,
+    "question": "Kerala was formed in which year?",
+    "options": ["1947", "1950", "1956", "1960"],
+    "answer": 2
+  }
+]

@@ -1,0 +1,194 @@
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+}
+
+/* Container */
+.login-container {
+  min-height: 100vh;
+  background: url("../../public/loginbg.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  position: relative;
+}
+
+.login-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Wrapper */
+.login-wrapper {
+  width: 100%;
+  max-width: 360px; /* 🔽 reduced */
+  position: relative;
+  z-index: 1;
+}
+
+/* Card */
+.login-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  border-radius: 14px;
+  padding: 30px 30px; /* 🔽 reduced */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Header */
+.login-card-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.login-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.login-card-subtitle {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: #64748b;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px 12px 10px 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #fff;
+}
+
+/* Error */
+.error-message {
+  background: rgba(239, 68, 68, 0.2);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 14px;
+  display: flex;
+  gap: 8px;
+}
+
+.error-icon {
+  width: 18px;
+  height: 18px;
+  color: #fecaca;
+}
+
+.error-text {
+  font-size: 13px;
+  color: #fff;
+}
+
+/* Remember me */
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.remember-me label {
+  font-size: 13px;
+  color: #fff;
+}
+
+/* Button */
+.login-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 14px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.divider-text {
+  padding: 0 10px;
+  font-size: 11px;
+  color: #fff;
+}
+
+/* Footer */
+.login-footer {
+  text-align: center;
+}
+
+.login-footer a {
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Bottom footer */
+.bottom-footer {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Mobile */
+@media (max-width: 420px) {
+  .login-card {
+    padding: 20px;
+  }
+}
