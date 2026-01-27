@@ -1,5 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import "./review.css";
+import html2pdf from "html2pdf.js/dist/html2pdf.min";
+
 
 export default function Review() {
   const { state } = useLocation();
@@ -14,27 +16,45 @@ export default function Review() {
     navigate("/"); // login page
   };
 
-  return (
-    <div className="review-container">
-      {/* Header */}
-      <div className="review-header">
-        <h2 className="review-title">Answer Review</h2>
+  const handleDownloadPDF = () => {
+  const element = document.getElementById("review-pdf");
 
-        <div className="review-actions">
-          <button
-            className="retry-btn"
-            onClick={() => navigate("/language")}
-          >
-            Attend Again
-          </button>
+  const options = {
+    margin: 0.5,
+    filename: "PSC_Answer_Review.pdf",
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+  };
 
-          <button className="close-btn" onClick={handleLogout}>
-            Logout
-          </button>
-        </div>
+  html2pdf().set(options).from(element).save();
+};
+
+
+ return (
+  <div className="review-container">
+
+    {/* Header */}
+    <div className="review-header">
+      <h2 className="review-title">Answer Review</h2>
+
+      <div className="review-actions">
+        <button className="retry-btn" onClick={() => navigate("/language")}>
+          Attend Again
+        </button>
+
+        <button className="pdf-btn" onClick={handleDownloadPDF}>
+          Download PDF
+        </button>
+
+        <button className="close-btn" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
+    </div>
 
-      {/* Questions */}
+    {/* PDF CONTENT START */}
+    <div id="review-pdf">
       {questions.map((q, i) => {
         const userAnswerIndex = answers[i];
         const isAnswered = userAnswerIndex !== undefined;
@@ -69,5 +89,9 @@ export default function Review() {
         );
       })}
     </div>
-  );
+    {/* PDF CONTENT END */}
+
+  </div>
+);
+
 }
